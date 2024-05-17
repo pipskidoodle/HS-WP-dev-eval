@@ -24,3 +24,186 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .skip-link{left:-9999rem;top:2.5rem;z-index:999999999;text-decoration:underline}
 .skip-link:focus{display:block;left:6px;top:7px;font-size:14px;font-weight:600;text-decoration:none;line-height:normal;padding:15px 23px 14px;z-index:100000;right:auto}
 .visually-hidden:not(:focus):not(:active), .form-allowed-tags:not(:focus):not(:active){position:absolute !important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);white-space:nowrap}
+
+
+/* ========== TABLE OF CONTENTS ========== */
+
+  /*---- 1. Global Styles
+  /*---- 2. Text Styles
+  /*---- 3. Section Styles
+  /*---- 4. Element Styles
+  /*---- 5. Animation Styles
+  /*---- 6. Unsorted Styles
+  /*---- 7. Contact Form 7 Styles
+  /*---- 8. Media Queries
+
+/* ======================================= */
+
+  /*===== 1. Global Styles =====*/
+
+    @font-face {
+        font-family: 'geist';
+        src: url('fonts/geist-light-webfont.woff2') format('woff2'),
+            url('fonts/geist-light-webfont.woff') format('woff');
+        font-weight: lighter;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: 'geist';
+        src: url('fonts/geist-regular-webfont.woff2') format('woff2'),
+            url('fonts/geist-regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+    @font-face {
+        font-family: 'geist';
+        src: url('fonts/geist-semibold-webfont.woff2') format('woff2'),
+            url('fonts/geist-semibold-webfont.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+
+    }
+
+    :root {
+        --geist: 'geist', sans-serif;
+        --color-primary: 31,41,55;
+        --color-accent: 0,0,0;
+        --text-dark: var(--color-accent);
+        --text-light: 115,121,135;
+        --transition: .3s;
+    }
+
+  /*===== 2. Text Styles =====*/
+  h1, h2, h3, h4, h5, h6, p, a, li {
+    font-family: var(--geist);
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+p {
+    font-weight: normal;
+}
+
+main h1, main h2, main h3, main h4, main h5, main h6, main p {
+    margin-bottom: 1rem;
+}
+
+  /*===== 3. Section Styles =====*/
+
+    .wp-block-group.alignwide .wp-block-group__inner-container {
+        max-width: 1000px;
+    }
+
+    .wp-block-group.alignwide {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+    }
+
+  /*===== 4. Element Styles =====*/
+
+  .wp-block-button__link {
+    background: rgba(var(--color-accent),1);
+    border-radius: 5px;
+    font-size: .8rem;
+    padding: 10px 25px;
+    transition: var(--transition);
+}
+
+.wp-block-button__link:hover {
+    background: rgba(var(--color-accent), .7);
+    transition: var(--transition);
+}
+
+  img {
+    border-radius: 10px;
+}
+#menu-main-nav a {
+    color: rgba(var(--text-dark,1));
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#menu-main-nav a:hover {
+    transition: var(--transition);
+    color: rgba(var(--text-dark,.7));
+}
+#site-info a {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(var(--text-dark),1);
+    transition: var(--transition);
+}
+
+#site-info a:hover {
+    color: rgba(rgba(var(--text-dark),.7));
+    transition: var(--transition);
+}
+    #site-logo {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+    }
+    #menu-main-nav li {
+        margin: 0 5px;
+        font-family: var(--geist);
+        font-weight: bold;
+    }
+    #branding {
+        display: flex;
+        align-items: center;
+    }
+
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #menu {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu-main-nav {
+        display: flex;
+    }
+
+    #site-info {
+        width: 315px;
+    }
+
+    #footer {
+        background: rgba(var(--color-primary));
+        padding: 30px;
+        color: white;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+
+  /*===== 5. Animation Styles =====*/
+
+
+  /*===== 6. Unsorted Styles =====*/
+
+
+  /*===== 7. Contact Form 7 Styles =====*/
+
+
+  /*===== 8. Media Queries =====*/
+
+
+
+
+
+

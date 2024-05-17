@@ -9,8 +9,9 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'html5', array( 'search-form', 'navigation-widgets' ) );
 add_theme_support( 'woocommerce' );
 global $content_width;
-if ( !isset( $content_width ) ) { $content_width = 1920; }
+if ( !isset( $content_width ) ) { $content_width = 1100; }
 register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' ) ) );
+register_nav_menus( array( 'footer-menu' => esc_html__( 'Footer Menu', 'blankslate' ) ) );
 }
 add_action( 'admin_notices', 'blankslate_notice' );
 function blankslate_notice() {
@@ -164,3 +165,47 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+//Enqueue js file
+function js_enqueue() {
+	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/index.js', array(), false, true );
+}
+add_action( 'wp_enqueue_scripts', 'js_enqueue' );
+
+// Add Site Logo Support
+add_theme_support( 'custom-logo' );
+
+// Add SVG Support
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+  }
+  add_filter('upload_mimes', 'cc_mime_types');
+
+// Add theme version to style link
+$theme = wp_get_theme();
+define('THEME_VERSION', $theme->Version); 
+
+// Add full width support
+add_theme_support('align-wide');
+
+/*Register WordPress  Gutenberg CPT */
+function cw_post_type() {
+
+    register_post_type( 'gutters',
+        // WordPress CPT Options Start
+        array(
+            'labels' => array(
+                'name' => __( 'Gutters' ),
+                'singular_name' => __( 'Gutter' )
+            ),
+            'has_archive' => true,
+            'public' => true,
+            'rewrite' => array('slug' => 'gutters'),
+			'show_in_rest' => true,
+			'supports' => array('title','editor')
+        )
+    );
+}
+
+add_action( 'init', 'cw_post_type' );
